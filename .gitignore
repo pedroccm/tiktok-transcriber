@@ -1,0 +1,15 @@
+# secrets / local config
+.env
+*.sessionid
+cookies.json
+cookies.txt
+
+# transcripts output (don't commit scraped content)
+transcripts/
+output/
+
+# runtime junk
+*.mp3
+*.log
+__pycache__/
+*.pyc
