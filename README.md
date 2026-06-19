@@ -1,3 +1,5 @@
+<sub>**English** · [Português 🇧🇷](README.pt-BR.md)</sub>
+
 # 🎬 TikTok Transcriber
 
 > Turn a TikTok link **or an entire profile** into clean Markdown transcripts, each one
@@ -40,15 +42,15 @@ Run it on one video or a whole creator's profile and you get one note per video:
 
 ## 🚀 Features
 
-- **One video or a full profile** — paste a link, an `@handle`, or just a username.
-- **Every public metric** — views, likes, comments, reposts, **saves**, and the post date.
+- **One video or a full profile**: paste a link, an `@handle`, or just a username.
+- **Every public metric**: views, likes, comments, reposts, **saves**, and the post date.
   (TikTok exposes saves publicly; most tools don't surface them.)
-- **No login / no cookies** — `yt-dlp` lists the profile and pulls the metrics for you.
-- **Accurate transcripts** — audio goes through [Groq](https://groq.com)'s
+- **No login / no cookies**: `yt-dlp` lists the profile and pulls the metrics for you.
+- **Accurate transcripts**: audio goes through [Groq](https://groq.com)'s
   `whisper-large-v3`, which auto-detects the language.
-- **Resumable** — re-running skips videos that are already done and retries the ones
+- **Resumable**: re-running skips videos that are already done and retries the ones
   that failed. Great for big back-catalogs.
-- **Self-healing downloads** — yt-dlp's TikTok extractor hiccups sometimes; a built-in
+- **Self-healing downloads**: yt-dlp's TikTok extractor hiccups sometimes; a built-in
   retry recovers it.
 
 ---
@@ -98,8 +100,8 @@ python tiktok.py @user1 @user2 "https://www.tiktok.com/@user3/video/123"
 ```
 
 Flags:
-- `--limit N` — only the **N newest** videos of the profile.
-- `--force` — ignore the resume cache and re-transcribe everything.
+- `--limit N`, only the **N newest** videos of the profile.
+- `--force`, ignore the resume cache and re-transcribe everything.
 
 Windows users can also double-click-friendly run `tiktok.cmd @user`.
 
@@ -126,13 +128,13 @@ videos are detected by their link, so nothing gets done twice.
 
 ## ⚙️ How it works
 
-1. **List** — for a profile, `yt-dlp --flat-playlist` enumerates every video URL.
-2. **Download** — `yt-dlp -x` grabs just the audio as a tiny 16 kHz mono mp3 (with retry).
-3. **Transcribe** — the mp3 is sent to Groq Whisper (`whisper-large-v3`).
-4. **Write** — caption + metrics + transcript are saved as a Markdown note.
+1. **List**: for a profile, `yt-dlp --flat-playlist` enumerates every video URL.
+2. **Download**: `yt-dlp -x` grabs just the audio as a tiny 16 kHz mono mp3 (with retry).
+3. **Transcribe**: the mp3 is sent to Groq Whisper (`whisper-large-v3`).
+4. **Write**: caption + metrics + transcript are saved as a Markdown note.
 
 Metrics come directly from yt-dlp's metadata (`view_count`, `like_count`, `comment_count`,
-`repost_count`, `save_count`, `timestamp`) — no scraping, no second request.
+`repost_count`, `save_count`, `timestamp`), no scraping, no second request.
 
 ---
 
@@ -155,10 +157,10 @@ Then just say *"transcribe this TikTok profile: @user"* and Claude runs it for y
 - **Saves** are TikTok-only here; the Instagram sibling tool can't get them (Instagram
   keeps saves private to the post owner).
 - Hidden counts come back as `-1` from yt-dlp and are simply omitted from the note.
-- Photo (carousel) posts are skipped — there's no speech to transcribe.
+- Photo (carousel) posts are skipped, there's no speech to transcribe.
 
 ---
 
 ## 📄 License
 
-MIT — see [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE).
